@@ -20,7 +20,7 @@ class TransactionList extends StatelessWidget {
                   Container(
                     margin: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
                     child: Text(
-                      "\$ ${transactions[index].amount}",
+                      "\₹ ${transactions[index].amount}",
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 20,

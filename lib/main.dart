@@ -12,7 +12,6 @@ class MyApp extends StatelessWidget {
       title: 'Expense App',
       theme: ThemeData(
         primarySwatch: Colors.green,
-        accentColor: Colors.lightGreen,
         fontFamily: 'ProximaNova',
       ),
       home: MyHomePage(),
@@ -31,19 +30,19 @@ class _MyHomePageState extends State<MyHomePage> {
   final List<Transaction> _userTransactions = [
     Transaction(
       id: '1',
-      title: 'New Shoes',
+      title: 'Transaction 1',
       amount: 3200.05,
       date: DateTime.now(),
     ),
     Transaction(
       id: '2',
-      title: 'Veggies',
+      title: 'Transaction 2',
       amount: 222,
       date: DateTime.now(),
     ),
     Transaction(
       id: '3',
-      title: 'Chics',
+      title: 'Transaction 3',
       amount: 1640,
       date: DateTime.now(),
     ),
