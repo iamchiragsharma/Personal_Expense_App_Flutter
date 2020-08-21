@@ -1,5 +1,14 @@
 # Personal Expense App
 
-## First App to Register Personal Expenses with latest Flutter Version, a lot of new functionalities are being implemented.
+## Goals Accomplished
+[x] Created StateFul Management of Data.
 
-![Personal Expense](README_assets/playback_example.gif)
+[x] Implemented Map, Getter and List, alternatives to lambda expressions
+
+[x] Created Bar Charts by Stacking Widgets.
+
+[x] Implemented External Package.
+
+[x] Implemented Alternative and Hidden Widgets.
+
+![Personal Expense](README_assets/app_display.gif)

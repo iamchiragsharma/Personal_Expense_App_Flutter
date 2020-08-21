@@ -12,51 +12,65 @@ class TransactionList extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
         height: 500,
-        child: ListView.builder(
-          itemBuilder: (ctx, index) {
-            return Card(
-              child: Row(
+        child: transactions.isEmpty
+            ? Column(
                 children: [
+                  Text("No Transactions added yet."),
                   Container(
-                    margin: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
-                    child: Text(
-                      "\₹ ${transactions[index].amount}",
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 20,
-                        color: Theme.of(context).primaryColorDark,
-                      ),
-                    ),
-                    decoration: BoxDecoration(
-                        border: Border.all(
-                      color: Theme.of(context).primaryColor,
-                      width: 2,
-                    )),
-                    padding: EdgeInsets.all(10),
-                  ),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        transactions[index].title,
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 16,
-                        ),
-                      ),
-                      Text(
-                        DateFormat.yMMMd().format(transactions[index].date),
-                        style: TextStyle(
-                          color: Colors.grey,
-                        ),
-                      )
-                    ],
-                  )
+                      height: 200,
+                      child: Image.asset(
+                        'assets/images/loading.png',
+                        fit: BoxFit.cover,
+                      ))
                 ],
-              ),
-            );
-          },
-          itemCount: transactions.length,
-        ));
+              )
+            : ListView.builder(
+                itemBuilder: (ctx, index) {
+                  return Card(
+                    child: Row(
+                      children: [
+                        Container(
+                          margin: EdgeInsets.symmetric(
+                              horizontal: 15, vertical: 10),
+                          child: Text(
+                            "\₹ ${transactions[index].amount}",
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 20,
+                              color: Theme.of(context).primaryColorDark,
+                            ),
+                          ),
+                          decoration: BoxDecoration(
+                              border: Border.all(
+                            color: Theme.of(context).primaryColor,
+                            width: 2,
+                          )),
+                          padding: EdgeInsets.all(10),
+                        ),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              transactions[index].title,
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 16,
+                              ),
+                            ),
+                            Text(
+                              DateFormat.yMMMd()
+                                  .format(transactions[index].date),
+                              style: TextStyle(
+                                color: Colors.grey,
+                              ),
+                            )
+                          ],
+                        )
+                      ],
+                    ),
+                  );
+                },
+                itemCount: transactions.length,
+              ));
   }
 }
