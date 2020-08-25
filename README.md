@@ -12,3 +12,4 @@
 [x] Implemented Alternative and Hidden Widgets.
 
 ![Personal Expense](README_assets/app_display.gif)
+
